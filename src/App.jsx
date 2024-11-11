@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.js
+import React from 'react';
+import TopBar from './components/TopBar';
+import BottomBar from './components/BottomBar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={styles.appContainer}>
+      <TopBar />
+      <main style={styles.mainContent}>
+        <h1>Bienvenido a mi página web</h1>
+        <p>Esta es la sección principal de la página.</p>
+      </main>
+      <BottomBar />
+    </div>
+  );
 }
 
-export default App
+const styles = {
+  appContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    width: '100%',
+  },
+  mainContent: {
+    flex: 1,
+    padding: '20px',
+    backgroundColor: '#f0f0f0',
+    width: '100%',
+    boxSizing: 'border-box',
+  },
+};
+
+export default App;
