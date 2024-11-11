@@ -1,0 +1,32 @@
+/* src/components/TopBar.css */
+.topBar {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-align: left;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 20px;
+  }
+  
+  .linksContainer {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .link {
+    color: white;
+    text-decoration: none;
+  }
+  
