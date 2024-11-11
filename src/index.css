@@ -13,6 +13,7 @@ html, body, #root {
 
 body {
   font-family: Arial, sans-serif;
+  margin-bottom: 60px; /* Ajusta según el tamaño de la barra inferior */
 }
 
 /* Estilos Globales */
