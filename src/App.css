@@ -7,7 +7,7 @@
 
 .header, .footer {
   width: 100%; /* Asegura que las barras superior e inferior ocupen todo el ancho */
-  background-color: #333;
+  background-color: #ffffff;
   color: #fff;
   padding: 1rem;
   text-align: center;

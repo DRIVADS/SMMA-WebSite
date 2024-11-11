@@ -1,8 +1,9 @@
 /* src/components/TopBar.css */
+
 .topBar {
     width: 100%;
     padding: 10px 20px;
-    background-color: #0073e6;
+    background-color: #3da227;
     color: white;
     text-align: left;
   }
