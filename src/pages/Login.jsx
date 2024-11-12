@@ -1,57 +1,96 @@
-// src/pages/Login.jsx
-import React, { useState } from 'react';
-import { Button, Form, Container } from 'react-bootstrap'; // Asegúrate de que la ruta de importación sea correcta
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap si no lo has hecho aún
-import './Login.css';  // Tu archivo CSS adicional
-
+import React, { useState } from "react";
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    const [formData, setFormData] = useState({
+        username: "",
+        password: ""
+    });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes manejar el inicio de sesión, como enviarlo a una API
-    console.log('Usuario:', username);
-    console.log('Contraseña:', password);
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
-  return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <Form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: '400px' }}>
-        <h2 className="text-center mb-4">Iniciar Sesión</h2>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Aquí puedes manejar el inicio de sesión
+        console.log("Datos del formulario:", formData);
+    };
 
-        {/* Campo de usuario */}
-        <Form.Group className="mb-3" controlId="formUsername">
-          <Form.Label>Usuario</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu usuario"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </Form.Group>
-
-        {/* Campo de contraseña */}
-        <Form.Group className="mb-3" controlId="formPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Ingresa tu contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </Form.Group>
-
-        {/* Botón de inicio de sesión */}
-        <Button variant="primary" type="submit" className="w-100">
-          Iniciar Sesión
-        </Button>
-      </Form>
-    </Container>
-  );
+    return (
+        <div style={styles.container}>
+            <h2>Iniciar Sesión</h2>
+            <form onSubmit={handleSubmit} style={styles.form}>
+                <div style={styles.formGroup}>
+                    <label htmlFor="username">Nombre de Usuario</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                        style={styles.input}
+                    />
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                        style={styles.input}
+                    />
+                </div>
+                <button type="submit" style={styles.button}>Iniciar Sesión</button>
+            </form>
+        </div>
+    );
 }
 
-export default Login;
+const styles = {
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "10px",
+        minHeight: "100vh", // Cambia "height" por "minHeight"
+        backgroundColor: "#f5f5f5"
+    },
+    form: {
+        backgroundColor: "#ffffff",
+        padding: "20px",
+        borderRadius: "5px",
+        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+        width: "100%",
+        maxWidth: "400px",
+        marginTop: "20px" // Ajusta el margen superior para controlar la distancia del menú
+    },
+    formGroup: {
+        marginBottom: "15px"
+    },
+    input: {
+        width: "100%",
+        padding: "10px",
+        border: "1px solid #ddd",
+        borderRadius: "5px",
+        fontSize: "14px",
+        backgroundColor: "#ffffff",  // Fondo blanco
+        color: "black",              // Texto oscuro
+    },
+    button: {
+        width: "100%",
+        padding: "10px",
+        backgroundColor: "#62b32a",
+        border: "none",
+        borderRadius: "5px",
+        color: "#fff",
+        fontSize: "16px",
+        cursor: "pointer"
+    }
+};
+
+export default Login;  // Asegúrate de exportar el componente como 'default'
