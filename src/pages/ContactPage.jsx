@@ -81,8 +81,8 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
+        padding: "10px",
+        minHeight: "100vh", // Cambia "height" por "minHeight"
         backgroundColor: "#f5f5f5"
     },
     form: {
@@ -91,7 +91,8 @@ const styles = {
         borderRadius: "5px",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
         width: "100%",
-        maxWidth: "400px"
+        maxWidth: "400px",
+        marginTop: "20px" // Ajusta el margen superior para controlar la distancia del menú
     },
     formGroup: {
         marginBottom: "15px"
@@ -101,12 +102,14 @@ const styles = {
         padding: "10px",
         border: "1px solid #ddd",
         borderRadius: "5px",
-        fontSize: "14px"
+        fontSize: "14px",
+        backgroundColor: "#ffffff",  // Fondo blanco
+        color: "black",              // Texto oscuro
     },
     button: {
         width: "100%",
         padding: "10px",
-        backgroundColor: "#007bff",
+        backgroundColor: "#62b32a",
         border: "none",
         borderRadius: "5px",
         color: "#fff",
@@ -114,5 +117,6 @@ const styles = {
         cursor: "pointer"
     }
 };
+
 
 export default ContactPage;  // Asegúrate de exportar el componente como 'default'
