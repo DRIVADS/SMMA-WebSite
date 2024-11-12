@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import Monitoreos from './pages/Monitoreos';  // Nueva importación
 import Historico from './pages/Historico';    // Nueva importación
 import Login from './pages/Login';            // Nueva importación
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
